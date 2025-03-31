@@ -31,6 +31,17 @@ function App() {
     <section className="app">
       <Header handleRouting={handleRouting} />
       {
+        displayPokedex
+        ? <Pokedex pokemons={pokemonList} />
+        : displayGenerator
+        ? <TeamGenerator pokemons={pokemonList} />
+        : displaySearch 
+        ? <SearchPokemon pokemons={pokemonList} />
+        : ''
+      }
+      
+      
+      {/* {
         displayPokedex && <Pokedex pokemons={pokemonList} />
       }
       {
@@ -38,7 +49,7 @@ function App() {
       }
       {
         displaySearch && <SearchPokemon pokemons={pokemonList} />
-      }
+      } */}
     </section>
   )
 }
