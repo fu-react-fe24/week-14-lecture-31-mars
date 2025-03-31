@@ -1,6 +1,6 @@
 import NavItem from './NavItem';
 
-function NavBar() {
+function NavBar({handleRouting}) {
     const navItems = ['Pokedex', 'Team Generator', 'Search Pokemon'];
 
   return (
@@ -11,6 +11,7 @@ function NavBar() {
                     return <NavItem 
                         key={index}
                         text={item}
+                        handleRouting={handleRouting}
                     />
                 })
             }

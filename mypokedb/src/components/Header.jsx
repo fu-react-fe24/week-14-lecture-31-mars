@@ -1,11 +1,11 @@
 import Logo from "./Logo";
 import NavBar from "./NavBar";
 
-function Header() {
+function Header({handleRouting}) {
   return (
     <header className="header">
         <Logo />
-        <NavBar />
+        <NavBar handleRouting={handleRouting} />
     </header>
   )
 }

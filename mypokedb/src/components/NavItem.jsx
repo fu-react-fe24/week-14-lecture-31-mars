@@ -1,6 +1,11 @@
-function NavItem({text}) {
+function NavItem({text, handleRouting}) {
   return (
-    <li className="nav__item">{text}</li>
+    <li 
+      onClick={() => handleRouting(text)} 
+      className="nav__item"
+    >
+      {text}
+    </li>
   )
 }
 

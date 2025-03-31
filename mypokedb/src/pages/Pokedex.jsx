@@ -1,7 +1,6 @@
-import PokemonCard from './PokemonCard';
-import pokemons from '../assets/pokemons';
+import PokemonCard from '../components/PokemonCard';
 
-function Pokedex() {
+function Pokedex({pokemons}) {
   return (
     <section className="pokedex">
         <h2 className="pokedex__title">Pokedex</h2>
@@ -19,4 +18,4 @@ function Pokedex() {
   )
 }
 
-export default Pokedex
+export default Pokedex;
