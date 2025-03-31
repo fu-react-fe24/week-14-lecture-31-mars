@@ -32,3 +32,16 @@ li {
   padding: 1rem;
   font-size: 1.25rem;
 }
+
+form {
+  width: 50%;
+  margin-top: -.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+form > * {
+  padding: 1rem;
+  cursor: pointer;
+}

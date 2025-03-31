@@ -1,9 +1,9 @@
-function TodoItem({task, done}) {
-    console.log(done);
+function TodoItem({todo, handleTodoClick}) {
   return (
     <li
-        style={{ backgroundColor: done ? 'green' : 'red' }} /* Ternary Operator */
-    >{task}</li>
+      onClick={() => handleTodoClick(todo.id)}
+      style={{ backgroundColor: todo.done ? 'green' : 'red' }} /* Ternary Operator */
+    >{todo.task}</li>
   )
 }
 
