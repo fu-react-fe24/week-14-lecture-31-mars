@@ -1,26 +1,26 @@
 import AddTodoForm from "./components/AddTodoForm";
 import TodoList from "./components/TodoList";
 import todoList from "./data/todoList";
+import {useState} from 'react';
 
 function App() {
+  const [todos, setTodos] = useState(todoList);
   let appName = 'My Todo App';
 
   const handleTodoClick = (id) => {
-    todoList.forEach(item => {
+    todos.forEach(item => {
       if(item.id === id) item.done = !item.done;
     })
-    console.log(todoList)
+    setTodos([...todos]);
   }
 
   const handleAddTodo = (text) => {
     const newTodo = {
-      id: todoList.length + 1,
+      id: todos.length + 1,
       task : text,
       done : false
     }
-    todoList.push(newTodo);
-    console.log(todoList);
-    
+    setTodos([...todos, newTodo]);    
   }
 
   return (
@@ -28,7 +28,7 @@ function App() {
       <h1>{ appName }</h1>
       <TodoList 
         handleTodoClick={handleTodoClick}
-        todos={todoList} 
+        todos={todos} 
       />
       <AddTodoForm 
         handleAddTodo={handleAddTodo}

@@ -1,15 +1,17 @@
+import {useState} from 'react';
+
 function AddTodoForm({handleAddTodo}) {
-    let inputValue = '';
+    const [input, setInput] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        handleAddTodo(inputValue);
+        if(input !== '') handleAddTodo(input);
     }
 
   return (
     <form onSubmit={handleSubmit}>
         <input 
-            onChange={ (event) => inputValue = event.target.value }
+            onChange={ (event) => setInput(event.target.value)}
             type="text" 
             placeholder="Ny Todo" 
         />
